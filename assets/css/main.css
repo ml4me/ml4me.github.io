@@ -66,18 +66,39 @@ a:after {
     padding: 0;
 }
 
+video {
+    width: 100%;
+    height: inherit;
+    z-index: -10;
+    object-fit: cover;
+    position: fixed;
+}
+
+#titletext {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    z-index: -5;
+}
+
+#interiortitletext {
+    padding: 200px;
+}
+
 
 /* ==========================================================================
    Wrap Sections
    ========================================================================== */
 
 #headerwrap {
-	background-color: #34495e;
-	padding-top: 60px;
+    height: 500px;
+/*    background-color: #34495e;
+	padding-top: 60px;*/
 }
 
 #headerwrap h1 {
-	margin-top: 30px;
+/*	margin-top: 30px; */
 	color: white;
 	font-size: 70px;
 	
@@ -104,11 +125,13 @@ a:after {
 #intro {
 	padding-top: 50px;
 	border-top: #bdc3c7 solid 5px;
+    background-color: white;
 }
 
 #features {
 	padding-top: 50px;
 	padding-bottom: 50px;
+    background-color: white;
 }
 
 #features .ac a{
