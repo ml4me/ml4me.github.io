@@ -226,8 +226,11 @@
 	function do_stuffs() {
     var one = $("#entry_1774138066").val();
     var two = $('#entry_1423764979').val();
-    var three = $('#entry_635094291').val();
+    var three = $('#entry_635094291').val() + ':checked?:' + $('input[name="betabox"]').is(':checked');
 
+if (one == '' || two.indexOf('@') === -1){
+ alert("Please enter your name and email");
+}else{
     $.ajax({
         url: "https://docs.google.com/forms/d/12Rx_r3aZFkOcJYpF_f2Qq3pFRT4WyG0LvROAdSSWmSo/formResponse",
         beforeSend: function (xhr) {
@@ -242,20 +245,15 @@
 "fvv": "0",
 "fbzx": "-1376084224841563015"
 	},
+Accept : "text/html", 
         type: "POST",
         dataType: "jsonp",
         xhrFields: {
             withCredentials: true
-        },
-        statusCode: {
-            0: function () {
-		alert("Your form has been submitted!");
-            },
-            200: function () {
-		alert("Your form has been submitted!");
-            }
         }
     });
+alert("Form successfully submitted!");
+}
 }	
 </script>	
 
@@ -267,7 +265,6 @@
 				<h3>Drop Us A Line</h3>
 				<br>
 				 <form enctype="plain"> 
-				 <!-- <form role="form" action="https://docs.google.com/forms/d/12Rx_r3aZFkOcJYpF_f2Qq3pFRT4WyG0LvROAdSSWmSo/formResponse" method="post" enctype="plain"> -->
 				  <div class="form-group">
 				    <label for="name1">Your Name</label>
 				    <input type="name" name="entry_1774138066" class="form-control" id="entry_1774138066" placeholder="Your Name">
@@ -280,6 +277,11 @@
 				  	<label>Your Text</label>
 				  	<textarea class="form-control" id="entry_635094291" name="entry_635094291" rows="3"></textarea>
 				  </div>
+                                  <div class="form-group">
+                                        <label>Notify me about the WordGrabBag Marketing Beta!</label><br>
+                                        <input type="checkbox" name="betabox" value="beta"><br>
+                                  </div>
+
 <input type="hidden" name="draftResponse" value="[,,&quot;-1376084224841563015&quot;]
 ">
 <input type="hidden" name="pageHistory" value="0">
